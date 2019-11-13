@@ -61,4 +61,5 @@ I'm going to work on adding in some routes where you can search the release date
 
 ## Author
 William Chrapcynski: all code
+
 [Nevin Vu](https://www.amiiboapi.com/): Data
