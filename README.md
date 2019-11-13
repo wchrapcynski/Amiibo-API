@@ -18,6 +18,7 @@ node GrabData_fetch.js
 
 Sample of the data:
 ![Data Sample](images/datasample.png)
+Tale and Head is not used in this project.
 
 You will now have a json file for seeding your database. `seed.js` is currently set up to use the Fetch version of the json file. You will needed to edit the name of the file if you used the Axios version. Use the command, `node seed.js` to send the data to a Mongo database. If you get any errors, make sure that the Mongo server is started. You can use `top | grep mongod` in the terminal to see if the process is already running. If it's not, use `mongod` to start it up.
 
