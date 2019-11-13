@@ -19,7 +19,7 @@ You will now have a json file for seeding your database. `seed.js` is currently 
 
 ## Usage
 
-The following routes are currently set to be used. You can test them out by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser.
+The following routes are currently set to be used. You can test them out by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. 
 ```
 router.get("/", function(req, res) { res.redirect(307, "/amiibo"); });
 router.get("/amiibo", amiiboController.index);
@@ -33,3 +33,9 @@ router.post("/amiibo", amiiboController.create);
 router.put("/amiibo/id/:id", amiiboController.edit);
 router.delete("/amiibo/id/:id", amiiboController.delete);
 ```
+If you're testing things out with Postman, you'll need to use these values in under Header:
+```
+KEY: Content-Type
+VALUE: application/json
+```
+Please refer to the json file for the object structure for the syntax of adding new documents to your database. 
