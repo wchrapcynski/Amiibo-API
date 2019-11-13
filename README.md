@@ -15,11 +15,11 @@ You'll then need to go to the `/src/db/` folder and use either the Axios or the 
 node GrabData_axios.js
 node GrabData_fetch.js
 ```
-You will now have a json file for seeding your database. `seed.js` is currently set up to use the Fetch version of the json file. You will needed to edit the name of the file if you used the Axios version. Use the command, `node seed.js` to send the data to a mongo database.
+You will now have a json file for seeding your database. `seed.js` is currently set up to use the Fetch version of the json file. You will needed to edit the name of the file if you used the Axios version. Use the command, `node seed.js` to send the data to a Mongo database. If you get any errors, make sure that the Mongo server is started. You can use `top | grep mongod` in the terminal to see if the process is already running. If it's not, use `mongod` to start it up.
 
 ## Usage
 
-The following routes are currently set to be used. You can test them out by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. 
+The following routes are currently set to be used. You can test GET by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. 
 ```
 router.get("/", function(req, res) { res.redirect(307, "/amiibo"); });
 router.get("/amiibo", amiiboController.index);
