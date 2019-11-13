@@ -10,8 +10,8 @@ router.get("/amiibo/releaseJP/:release", amiiboController.showReleaseJP);
 router.get("/amiibo/name/:name", amiiboController.showName);
 router.get("/amiibo/character/:character", amiiboController.showCharacter);
 router.get("/amiibo/type/:type", amiiboController.showType);
-// router.post("/amiibo", amiiboController.create);
-// router.put("/amiibo/name/:name", amiiboController.edit);
+router.post("/amiibo", amiiboController.create);
+router.put("/amiibo/id/:id", amiiboController.edit);
 router.delete("/amiibo/id/:id", amiiboController.delete);
     
 module.exports = router;

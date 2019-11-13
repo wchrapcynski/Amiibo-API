@@ -38,18 +38,18 @@ module.exports = {
       res.json(amiibo);
     });
   },
-  //   create: (req, res) => {
-  //     Amiibo.create(req.body).then(amiibo => {
-  //       res.json(amiibo);
-  //     });
-  //   },
-  //   edit: (req, res) => {
-  //     Amiibo.findOneAndUpdate({ name: req.params.name }, req.body, {
-  //       new: true
-  //     }).then(amiibo => {
-  //       res.json(amiibo);
-  //     });
-  //   },
+    create: (req, res) => {
+      Amiibo.create(req.body).then(amiibo => {
+        res.json(amiibo);
+      });
+    },
+    edit: (req, res) => {
+      Amiibo.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true
+      }).then(amiibo => {
+        res.json(amiibo);
+      });
+    },
   delete: (req, res) => {
     Amiibo.findOneAndDelete({ _id: req.params.id }).then(amiibo => {
       res.json(amiibo);
