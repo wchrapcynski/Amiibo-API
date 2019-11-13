@@ -1,6 +1,7 @@
 const Amiibo = require("../models/amiibo");
 const dataAmiibo = require("./amiibo_fetch.json");;
 
+// Seeds data from json
 const amiiboData = dataAmiibo.map(item => {
   const amiibo = {};
   amiibo.amiiboSeries = item.amiiboSeries;
