@@ -10,7 +10,7 @@ router.get("/amiibo", amiiboController.index);
 router.get("/amiibo/id/:id", amiiboController.showId);
 // Search by North American Release dates
 router.get("/amiibo/releaseNA/:release", amiiboController.showReleaseNA);
-// Searcy by American Release dates
+// Searcy by American Release dates. The date format is YYYY-MM-DD.
 router.get("/amiibo/releaseJP/:release", amiiboController.showReleaseJP);
 // Search by name
 router.get("/amiibo/name/:name", amiiboController.showName);

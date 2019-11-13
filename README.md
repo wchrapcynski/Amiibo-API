@@ -39,3 +39,7 @@ KEY: Content-Type
 VALUE: application/json
 ```
 Please refer to the json file for the object structure for the syntax of adding new documents to your database. 
+
+## TODO
+
+I'm going to work on adding in some routes where you can search the release dates by range. This will make the front end easier to interface with finding data for the users.
