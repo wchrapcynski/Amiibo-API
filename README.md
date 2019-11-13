@@ -25,30 +25,21 @@ You will now have a json file for seeding your database. `seed.js` is currently 
 ## Usage
 
 The following routes are currently set to be used. You can test GET by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. 
-```
-// Redirects the root to the amiibo resource
-router.get("/", function(req, res) { res.redirect(307, "/amiibo"); });
-// Main resource that lists the entire database
-router.get("/amiibo", amiiboController.index);
-// Searching by ID
-router.get("/amiibo/id/:id", amiiboController.showId);
-// Search by North American Release dates
-router.get("/amiibo/releaseNA/:release", amiiboController.showReleaseNA);
-// Searcy by American Release dates. The date format is YYYY-MM-DD.
-router.get("/amiibo/releaseJP/:release", amiiboController.showReleaseJP);
-// Search by name
-router.get("/amiibo/name/:name", amiiboController.showName);
-// Search by character name
-router.get("/amiibo/character/:character", amiiboController.showCharacter);
-// Search by type (Card/Figure)
-router.get("/amiibo/type/:type", amiiboController.showType);
-// Creates Amiibo listing
-router.post("/amiibo", amiiboController.create);
-// Edits an Amiibo listing
-router.put("/amiibo/id/:id", amiiboController.edit);
-// Deletes an Amiibo listing
-router.delete("/amiibo/id/:id", amiiboController.delete);   
-```
+
+| Route                          | Description
+|--------------------------------|:---------------------------------------------------------------------:|
+| "/"                            | Redirects the root to the amiibo resource.
+| "/amiibo"                      | Main resource that lists the entire database.
+| "/amiibo/id/:id"               | Searching by ID.
+| "/amiibo/releaseNA/:release"   | Search by North American Release dates. The date format is YYYY-MM-DD.
+| "/amiibo/releaseJP/:release"   | Search by American Release dates. The date format is YYYY-MM-DD.
+| "/amiibo/name/:name"           | Search by name.
+| "/amiibo/character/:character" | Search by character name.
+| "/amiibo/type/:type"           | Search by type (Card/Figure).
+| "/amiibo"                      | Creates Amiibo listing.
+| "/amiibo/id/:id"               | Edits an Amiibo listing
+| "/amiibo/id/:id"               | Deletes an Amiibo listing 
+
 If you're testing things out with Postman, you'll need to use these values in under Header:
 ```
 KEY: Content-Type
