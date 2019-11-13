@@ -1,19 +1,19 @@
-// const mongoose = require("../db/connection");
+const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
-const releaseSchema = new Shema({
-    au: {
-        type: Date
-    },
-    eu: {
-        type: Date
-    },
-    jp: {
-        type: Date
-    },
-    na: {
-        type: Date
-    }
+const releaseSchema = new Schema({
+  au: {
+    type: Date
+  },
+  eu: {
+    type: Date
+  },
+  jp: {
+    type: Date
+  },
+  na: {
+    type: Date
+  }
 });
 
 const amiiboSchema = new Schema({
@@ -52,5 +52,5 @@ const amiiboSchema = new Schema({
   }
 });
 
-const Amiibo = mongoose.model("ammibo", amiiboSchema);
+const Amiibo = mongoose.model("amiibo", amiiboSchema);
 module.exports = Amiibo;

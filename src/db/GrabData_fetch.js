@@ -1,5 +1,3 @@
-
-const axios = require('axios');
 const fs = require("fs");
 const fetch = require("node-fetch");
 
@@ -9,7 +7,7 @@ function grabData() {
     fetch("https://www.amiiboapi.com/api/amiibo")
       .then(res => res.json())
       .then(res => {
-          fs.writeFile("./amiibo_fetch.json", JSON.stringify(res, null, 2), function(err) {
+          fs.writeFile("./amiibo_fetch.json", JSON.stringify(res.amiibo, null, 2), function(err) {
             if (err) {
               return console.log(err);
             }
