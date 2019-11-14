@@ -7,7 +7,7 @@ module.exports = {
     });
   },
   showId: (req, res) => {
-    Amiibo.find({ _id: req.params.id}).then(amiibo => {
+    Amiibo.find({ _id: req.params.id }).then(amiibo => {
       res.json(amiibo);
     });
   },
@@ -17,9 +17,31 @@ module.exports = {
       res.json(amiibo);
     });
   },
+  showReleaseRangeNA: (req, res) => {
+    console.log(req.params.release);
+    Amiibo.find({
+      "release.na": {
+        $gte: req.params.releaseStart,
+        $lte: req.params.releaseEnd
+      }
+    }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
   showReleaseJP: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({ "release.jp": req.params.release }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
+  showReleaseRangeJP: (req, res) => {
+    console.log(req.params.release);
+    Amiibo.find({
+      "release.jp": {
+        $gte: req.params.releaseStart,
+        $lte: req.params.releaseEnd
+      }
+    }).then(amiibo => {
       res.json(amiibo);
     });
   },
@@ -38,18 +60,18 @@ module.exports = {
       res.json(amiibo);
     });
   },
-    create: (req, res) => {
-      Amiibo.create(req.body).then(amiibo => {
-        res.json(amiibo);
-      });
-    },
-    edit: (req, res) => {
-      Amiibo.findOneAndUpdate({ _id: req.params.id }, req.body, {
-        new: true
-      }).then(amiibo => {
-        res.json(amiibo);
-      });
-    },
+  create: (req, res) => {
+    Amiibo.create(req.body).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
+  edit: (req, res) => {
+    Amiibo.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true
+    }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
   delete: (req, res) => {
     Amiibo.findOneAndDelete({ _id: req.params.id }).then(amiibo => {
       res.json(amiibo);

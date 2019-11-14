@@ -8,10 +8,14 @@ router.get("/", function(req, res) { res.redirect(307, "/amiibo"); });
 router.get("/amiibo", amiiboController.index);
 // Searching by ID
 router.get("/amiibo/id/:id", amiiboController.showId);
-// Search by North American Release dates
+// Search by North American Release dates. The date format is YYYY-MM-DD.
 router.get("/amiibo/releaseNA/:release", amiiboController.showReleaseNA);
-// Searcy by American Release dates. The date format is YYYY-MM-DD.
+// Search by a range of North American Release dates. The date format is YYYY-MM-DD.
+router.get("/amiibo/releaseRangeNA/:releaseStart/:releaseEnd", amiiboController.showReleaseRangeNA);
+// Searcy by Japansee release dates. The date format is YYYY-MM-DD.
 router.get("/amiibo/releaseJP/:release", amiiboController.showReleaseJP);
+// Search by a range of Japanse Release dates. The date format is YYYY-MM-DD.
+router.get("/amiibo/releaseRangeJP/:releaseStart/:releaseEnd", amiiboController.showReleaseRangeJP);
 // Search by name
 router.get("/amiibo/name/:name", amiiboController.showName);
 // Search by character name

@@ -30,19 +30,21 @@ You will now have a json file for seeding your database. `seed.js` is currently 
 
 The following routes are currently set to be used. You can test GET by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. Replace DOMAIN with either localhost:3000 or whatever domain you have the API installed on.
 
-| Route                          | URL                                   | Method | Description                                                            |
-| ------------------------------ | :------------------------------------ | :----- | :--------------------------------------------------------------------- |
-| "/"                            | http://DOMAIN/                        | GET    | Redirects the root to the amiibo resource.                             |
-| "/amiibo"                      | http://DOMAIN/amiibo                  | GET    | Main resource that lists the entire database.                          |
-| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">               | GET    | Searching by ID.                                                       |
-| "/amiibo/releaseNA/:release"   | http://DOMAIN/realeaseNA/<"date">     | GET    | Search by North American Release dates. The date format is YYYY-MM-DD. |
-| "/amiibo/releaseJP/:release"   | http://DOMAIN/realeaseJP/<"date">     | GET    | Search by American Release dates. The date format is YYYY-MM-DD.       |
-| "/amiibo/name/:name"           | http://DOMAIN/name/<"name">           | GET    | Search by name.                                                        |
-| "/amiibo/character/:character" | http://DOMAIN/character/<"character"> | GET    | Search by character name.                                              |
-| "/amiibo/type/:type"           | http://DOMAIN/type/<"type">           | GET    | Search by type (Card/Figure).                                          |
-| "/amiibo"                      | http://DOMAIN/amiibo                  | POST   | Creates Amiibo listing.                                                |
-| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">               | PUT    | Edits an Amiibo listing                                                |
-| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">               | DELETE | Deletes an Amiibo listing                                              |
+| Route                                              | URL                                                      | Method | Description                                                            |
+| -------------------------------------------------- | :------------------------------------------------------- | :----- | :--------------------------------------------------------------------- |
+| "/"                                                | http://DOMAIN/                                           | GET    | Redirects the root to the amiibo resource.                             |
+| "/amiibo"                                          | http://DOMAIN/amiibo                                     | GET    | Main resource that lists the entire database.                          |
+| "/amiibo/id/:id"                                   | http://DOMAIN/id/<"id">                                  | GET    | Searching by ID.                                                       |
+| "/amiibo/releaseNA/:release"                       | http://DOMAIN/realeaseNA/<"date">                        | GET    | Search by North American Release dates. The date format is YYYY-MM-DD. |
+| "/amiibo/releaseRangeNA/:releaseStart/:releaseEnd" | http://DOMAIN/releaseRangeNA/<"Start Date">/<"End Date"> | GET    | Search by a range of dates for North American Releases.                |
+| "/amiibo/releaseJP/:release"                       | http://DOMAIN/realeaseJP/<"date">                        | GET    | Search by Japanese dates. The date format is YYYY-MM-DD.       |
+| "/amiibo/releaseRangeJP/:releaseStart/:releaseEnd" | http://DOMAIN/releaseRangeJP/<"Start Date">/<"End Date"> | GET    | Search by a range of dates for North Japanese Releases.                |
+| "/amiibo/name/:name"                               | http://DOMAIN/name/<"name">                              | GET    | Search by name.                                                        |
+| "/amiibo/character/:character"                     | http://DOMAIN/character/<"character">                    | GET    | Search by character name.                                              |
+| "/amiibo/type/:type"                               | http://DOMAIN/type/<"type">                              | GET    | Search by type (Card/Figure).                                          |
+| "/amiibo"                                          | http://DOMAIN/amiibo                                     | POST   | Creates Amiibo listing.                                                |
+| "/amiibo/id/:id"                                   | http://DOMAIN/id/<"id">                                  | PUT    | Edits an Amiibo listing                                                |
+| "/amiibo/id/:id"                                   | http://DOMAIN/id/<"id">                                  | DELETE | Deletes an Amiibo listing                                              |
 
 If you're testing things out with Postman, you'll need to use these values in under Header:
 
@@ -71,10 +73,6 @@ This is the format for adding and updating data:
     "type": "Figure"
   }
 ```
-
-## TODO
-
-I'm going to work on adding in some routes where you can search the release dates by range. This will make the front end easier to interface with finding data for the users.
 
 ## Author
 
