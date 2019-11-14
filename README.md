@@ -1,16 +1,20 @@
 # Amiibo API Project
 
 ## Description
-This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/). 
+
+This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/).
 
 ## Requirements
-* [Node JS](https://nodejs.org/en/)
-* [Mongo DB](https://www.mongodb.com/download-center)
+
+- [Node JS](https://nodejs.org/en/)
+- [Mongo DB](https://www.mongodb.com/download-center)
 
 ## Installation
-First install the requirements. Then download this repo to your hard drive. You'll then need to use `npm install` in the root of the amiibo_api folder to install dependencies. 
+
+First install the requirements. Then download this repo to your hard drive. You'll then need to use `npm install` in the root of the amiibo_api folder to install dependencies.
 
 You'll then need to go to the `/src/db/` folder and use either the Axios or the Fetch versions of GrabData to obtain the json file needed to seed your database. Either one of the following commands will work:
+
 ```
 node GrabData_axios.js
 node GrabData_fetch.js
@@ -26,32 +30,54 @@ You will now have a json file for seeding your database. `seed.js` is currently 
 
 The following routes are currently set to be used. You can test GET by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. Replace DOMAIN with either localhost:3000 or whatever domain you have the API installed on.
 
-| Route                          | URL                                  | Method       | Description
-|--------------------------------|:-------------------------------------|:-------------|:----------------------------------------------------------------------|
-| "/"                            | http://DOMAIN/                       | GET          | Redirects the root to the amiibo resource.
-| "/amiibo"                      | http://DOMAIN/amiibo                 | GET          | Main resource that lists the entire database.
-| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">              | GET          | Searching by ID.
-| "/amiibo/releaseNA/:release"   | http://DOMAIN/realeaseNA/<"date">    | GET          | Search by North American Release dates. The date format is YYYY-MM-DD.
-| "/amiibo/releaseJP/:release"   | http://DOMAIN/realeaseJP/<"date">    | GET          | Search by American Release dates. The date format is YYYY-MM-DD.
-| "/amiibo/name/:name"           | http://DOMAIN/name/<"name">          | GET          | Search by name.
-| "/amiibo/character/:character" | http://DOMAIN/character/<"character">| GET          | Search by character name.
-| "/amiibo/type/:type"           | http://DOMAIN/type/<"type">          | GET          | Search by type (Card/Figure).
-| "/amiibo"                      | http://DOMAIN/amiibo                 | POST         | Creates Amiibo listing.
-| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">              | PUT          | Edits an Amiibo listing
-| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">              | DELETE       | Deletes an Amiibo listing 
+| Route                          | URL                                   | Method | Description                                                            |
+| ------------------------------ | :------------------------------------ | :----- | :--------------------------------------------------------------------- |
+| "/"                            | http://DOMAIN/                        | GET    | Redirects the root to the amiibo resource.                             |
+| "/amiibo"                      | http://DOMAIN/amiibo                  | GET    | Main resource that lists the entire database.                          |
+| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">               | GET    | Searching by ID.                                                       |
+| "/amiibo/releaseNA/:release"   | http://DOMAIN/realeaseNA/<"date">     | GET    | Search by North American Release dates. The date format is YYYY-MM-DD. |
+| "/amiibo/releaseJP/:release"   | http://DOMAIN/realeaseJP/<"date">     | GET    | Search by American Release dates. The date format is YYYY-MM-DD.       |
+| "/amiibo/name/:name"           | http://DOMAIN/name/<"name">           | GET    | Search by name.                                                        |
+| "/amiibo/character/:character" | http://DOMAIN/character/<"character"> | GET    | Search by character name.                                              |
+| "/amiibo/type/:type"           | http://DOMAIN/type/<"type">           | GET    | Search by type (Card/Figure).                                          |
+| "/amiibo"                      | http://DOMAIN/amiibo                  | POST   | Creates Amiibo listing.                                                |
+| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">               | PUT    | Edits an Amiibo listing                                                |
+| "/amiibo/id/:id"               | http://DOMAIN/id/<"id">               | DELETE | Deletes an Amiibo listing                                              |
 
 If you're testing things out with Postman, you'll need to use these values in under Header:
+
 ```
 KEY: Content-Type
 VALUE: application/json
 ```
-Please refer to the json file for the object structure for the syntax of adding new documents to your database. 
+
+This is the format for adding and updating data:
+
+```
+{
+    "amiiboSeries": "Super Smash Bros.",
+    "character": "Mario",
+    "gameSeries": "Super Mario",
+    "head": "00000000",
+    "image": "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00000002.png",
+    "name": "Mario",
+    "release": {
+      "au": "2014-11-29",
+      "eu": "2014-11-28",
+      "jp": "2014-12-06",
+      "na": "2014-11-21"
+    },
+    "tail": "00000002",
+    "type": "Figure"
+  }
+```
 
 ## TODO
 
 I'm going to work on adding in some routes where you can search the release dates by range. This will make the front end easier to interface with finding data for the users.
 
 ## Author
+
 William Chrapcynski: all code
 
 [Nevin Vu](https://www.amiiboapi.com/): Data
