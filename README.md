@@ -29,7 +29,7 @@ You will now have a json file for seeding your database. `seed.js` is currently 
 ## Usage
 
 The following routes are currently set to be used. You can test GET by running `nodemon` in the `/src` folder and go to `localhost:3000` in your browser. You can also use [Postman](https://www.getpostman.com/) to test everything out. Replace DOMAIN with either localhost:3000 or whatever domain you have the API installed on.
-<font size="+1">
+<sub>
 | Route                                              | URL                                                      | Method | Description                                                            |
 | -------------------------------------------------- | :------------------------------------------------------- | :----- | :--------------------------------------------------------------------- |
 | "/"                                                | http://DOMAIN/                                           | GET    | Redirects the root to the amiibo resource.                             |
@@ -45,7 +45,7 @@ The following routes are currently set to be used. You can test GET by running `
 | "/amiibo"                                          | http://DOMAIN/amiibo                                     | POST   | Creates Amiibo listing.                                                |
 | "/amiibo/id/:id"                                   | http://DOMAIN/id/<"id">                                  | PUT    | Edits an Amiibo listing                                                |
 | "/amiibo/id/:id"                                   | http://DOMAIN/id/<"id">                                  | DELETE | Deletes an Amiibo listing                                              |
-</font>
+</sub>
 If you're testing things out with Postman, you'll need to use these values in under Header:
 
 ```
