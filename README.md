@@ -2,7 +2,9 @@
 
 ## Description
 
-This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/).
+This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/). The toughest part of this project was just finding an API that had a decent set of data that I could work with. Other than that, setting up and testing the routes was a bit of a trial but I believe that I was able to work out everything that I set out to do. 
+
+
 
 ## Requirements
 
@@ -11,7 +13,7 @@ This is a RESTful API that covers all the various Amiibos that are available. Da
 
 ## Installation
 
-First install the requirements. Then download this repo to your hard drive. You'll then need to use `npm install` in the root of the amiibo_api folder to install dependencies.
+First install the requirements. Then download this repo to your hard drive. You'll then need to use `npm install` in the root of the amiibo_api folder to install dependencies. It should install axios, body-parse, express, mongoose, and node-fetch. 
 
 You'll then need to go to the `/src/db/` folder and use either the Axios or the Fetch versions of GrabData to obtain the json file needed to seed your database. Either one of the following commands will work:
 
