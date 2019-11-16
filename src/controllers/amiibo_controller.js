@@ -55,7 +55,7 @@ module.exports = {
     });
   },
   showCharacter: (req, res) => {
-    Amiibo.find({ name: req.params.character }).then(amiibo => {
+    Amiibo.find({ character: req.params.character }).then(amiibo => {
       res.json(amiibo);
     });
   },
