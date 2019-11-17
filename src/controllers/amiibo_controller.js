@@ -13,7 +13,8 @@ module.exports = {
   },
   showReleaseNA: (req, res) => {
     console.log(req.params.release);
-    Amiibo.find({ "release.na": req.params.release + "T00:00:00.000Z" }).then(
+    Amiibo.find({ 
+      "releaseNA": req.params.release + "T00:00:00.000Z" }).then(
       amiibo => {
         res.json(amiibo);
       }
@@ -22,7 +23,7 @@ module.exports = {
   showReleaseRangeNA: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({
-      "release.na": {
+      "releaseNA": {
         $gte: req.params.releaseStart + "T00:00:00.000Z",
         $lte: req.params.releaseEnd + "T00:00:00.000Z"
       }
@@ -32,7 +33,8 @@ module.exports = {
   },
   showReleaseJP: (req, res) => {
     console.log(req.params.release);
-    Amiibo.find({ "release.jp": req.params.release + "T00:00:00.000Z" }).then(
+    Amiibo.find({ 
+      "releaseJP": req.params.release + "T00:00:00.000Z" }).then(
       amiibo => {
         res.json(amiibo);
       }
@@ -41,7 +43,7 @@ module.exports = {
   showReleaseRangeJP: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({
-      "release.jp": {
+      "releaseJP": {
         $gte: req.params.releaseStart + "T00:00:00.000Z",
         $lte: req.params.releaseEnd + "T00:00:00.000Z"
       }

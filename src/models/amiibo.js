@@ -1,21 +1,6 @@
 const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
-const releaseSchema = new Schema({
-  au: {
-    type: Date
-  },
-  eu: {
-    type: Date
-  },
-  jp: {
-    type: Date
-  },
-  na: {
-    type: Date
-  }
-});
-
 const amiiboSchema = new Schema({
   name: {
     type: String,
@@ -47,8 +32,11 @@ const amiiboSchema = new Schema({
     trim: true,
     minLength: 1
   },
-  release: {
-    type: [releaseSchema]
+  releaseNA: {
+    type: Date
+  },
+  releaseJP: {
+    type: Date
   }
 });
 
