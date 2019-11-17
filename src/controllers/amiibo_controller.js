@@ -13,16 +13,16 @@ module.exports = {
   },
   showReleaseNA: (req, res) => {
     console.log(req.params.release);
-    Amiibo.find({ "release.na": req.params.release + "T00:00:00.000Z" }).then(
-      amiibo => {
-        res.json(amiibo);
-      }
-    );
+    Amiibo.find({
+      releaseNA: req.params.release + "T00:00:00.000Z"
+    }).then(amiibo => {
+      res.json(amiibo);
+    });
   },
   showReleaseRangeNA: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({
-      "release.na": {
+      releaseNA: {
         $gte: req.params.releaseStart + "T00:00:00.000Z",
         $lte: req.params.releaseEnd + "T00:00:00.000Z"
       }
@@ -32,16 +32,16 @@ module.exports = {
   },
   showReleaseJP: (req, res) => {
     console.log(req.params.release);
-    Amiibo.find({ "release.jp": req.params.release + "T00:00:00.000Z" }).then(
-      amiibo => {
-        res.json(amiibo);
-      }
-    );
+    Amiibo.find({
+      releaseJP: req.params.release + "T00:00:00.000Z"
+    }).then(amiibo => {
+      res.json(amiibo);
+    });
   },
   showReleaseRangeJP: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({
-      "release.jp": {
+      releaseJP: {
         $gte: req.params.releaseStart + "T00:00:00.000Z",
         $lte: req.params.releaseEnd + "T00:00:00.000Z"
       }
@@ -55,7 +55,7 @@ module.exports = {
     });
   },
   showCharacter: (req, res) => {
-    Amiibo.find({ character: req.params.character }).then(amiibo => {
+    Amiibo.find({ name: req.params.character }).then(amiibo => {
       res.json(amiibo);
     });
   },

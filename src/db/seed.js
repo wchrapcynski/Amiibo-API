@@ -9,7 +9,8 @@ const amiiboData = dataAmiibo.map(item => {
   amiibo.gameSeries = item.gameSeries;
   amiibo.image = item.image;
   amiibo.name = item.name;
-  amiibo.release = item.release;
+  amiibo.releaseNA = item.release.na;
+  amiibo.releaseJP = item.release.jp;
   amiibo.type = item.type;
   return amiibo;
 });
