@@ -4,6 +4,8 @@
 
 This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/).
 
+This version is for the API deployed at https://amiibo-api.herokuapp.com/
+
 ## Requirements
 
 - [Node JS](https://nodejs.org/en/)
