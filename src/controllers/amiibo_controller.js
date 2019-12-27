@@ -1,5 +1,7 @@
 const Amiibo = require("../models/amiibo");
 
+// Testing update
+
 module.exports = {
   index: (req, res) => {
     Amiibo.find({}).then(amiibo => {
