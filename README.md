@@ -2,9 +2,9 @@
 
 ## Description
 
-This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/). The toughest part of this project was just finding an API that had a decent set of data that I could work with. Other than that, setting up and testing the routes was a bit of a trial but I believe that I was able to work out everything that I set out to do. 
+This is a RESTful API that covers all the various Amiibos that are available. Data was originally pulled from [https://www.amiiboapi.com/](https://www.amiiboapi.com/). The toughest part of this project was just finding an API that had a decent set of data that I could work with. Other than that, setting up and testing the routes was a bit of a trial but I believe that I was able to work out everything that I set out to do.
 
-This version is set up to run on your localhost.
+This version is for the API deployed at https://amiibo-api.herokuapp.com/
 
 ## Requirements
 

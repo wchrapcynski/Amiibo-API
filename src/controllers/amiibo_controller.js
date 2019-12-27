@@ -6,6 +6,16 @@ module.exports = {
       res.json(amiibo);
     });
   },
+  indexSortA: (req, res) => {
+    Amiibo.find({}, null, {sort: {character: 1 } }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
+  indexSortD: (req, res) => {
+    Amiibo.find({}, null, { sort: { character: -1 } }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
   showId: (req, res) => {
     Amiibo.find({ _id: req.params.id }).then(amiibo => {
       res.json(amiibo);
@@ -13,17 +23,16 @@ module.exports = {
   },
   showReleaseNA: (req, res) => {
     console.log(req.params.release);
-    Amiibo.find({ 
-      "releaseNA": req.params.release + "T00:00:00.000Z" }).then(
-      amiibo => {
-        res.json(amiibo);
-      }
-    );
+    Amiibo.find({
+      releaseNA: req.params.release + "T00:00:00.000Z"
+    }).then(amiibo => {
+      res.json(amiibo);
+    });
   },
   showReleaseRangeNA: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({
-      "releaseNA": {
+      releaseNA: {
         $gte: req.params.releaseStart + "T00:00:00.000Z",
         $lte: req.params.releaseEnd + "T00:00:00.000Z"
       }
@@ -33,17 +42,16 @@ module.exports = {
   },
   showReleaseJP: (req, res) => {
     console.log(req.params.release);
-    Amiibo.find({ 
-      "releaseJP": req.params.release + "T00:00:00.000Z" }).then(
-      amiibo => {
-        res.json(amiibo);
-      }
-    );
+    Amiibo.find({
+      releaseJP: req.params.release + "T00:00:00.000Z"
+    }).then(amiibo => {
+      res.json(amiibo);
+    });
   },
   showReleaseRangeJP: (req, res) => {
     console.log(req.params.release);
     Amiibo.find({
-      "releaseJP": {
+      releaseJP: {
         $gte: req.params.releaseStart + "T00:00:00.000Z",
         $lte: req.params.releaseEnd + "T00:00:00.000Z"
       }
