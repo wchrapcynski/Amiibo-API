@@ -6,6 +6,16 @@ module.exports = {
       res.json(amiibo);
     });
   },
+  indexSortA: (req, res) => {
+    Amiibo.find({}, null, {sort: {character: 1 } }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
+  indexSortD: (req, res) => {
+    Amiibo.find({}, null, { sort: { character: -1 } }).then(amiibo => {
+      res.json(amiibo);
+    });
+  },
   showId: (req, res) => {
     Amiibo.find({ _id: req.params.id }).then(amiibo => {
       res.json(amiibo);

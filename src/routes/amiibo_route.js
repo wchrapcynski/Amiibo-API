@@ -8,6 +8,10 @@ router.get("/", function(req, res) {
 });
 // Main resource that lists the entire database
 router.get("/amiibo", amiiboController.index);
+// Main resource that lists the entire database sorted ascending.
+router.get("/amiibo/sorta", amiiboController.indexSortA);
+// Main resource that lists the entire database sorted ascending.
+router.get("/amiibo/sortd", amiiboController.indexSortD);
 // Searching by ID
 router.get("/amiibo/id/:id", amiiboController.showId);
 // Search by North American Release dates. The date format is YYYY-MM-DD.
